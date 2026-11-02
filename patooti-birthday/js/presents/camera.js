@@ -153,7 +153,6 @@
   BD.presents.push({
     id: "camera",
     label: "CAMERA",
-    tag: "COMING SOON",
     wrap: { w: 22, h: 16, lidH: 6, paper: C.cream, paperLight: C.white, paperDark: C.creamDark, ribbon: C.pink, ribbonLight: C.pinkLight, ribbonDark: C.pinkDark, pattern: "dots" },
 
     /** Shown with the "Oopsie!" instruction box before the booth opens. */
@@ -166,7 +165,10 @@
       el.appendChild(BD.spriteEl(sprite));
       const glint = BD.place(BD.spriteEl(BD.small("sparkle", C.white, { hi: C.yellow }), "camera-glint"), flash.x - 2, flash.y - 2);
       el.appendChild(glint);
-      return { el, w: sprite.w, h: sprite.h };
+      const badge = document.createElement("div");
+      badge.className = "soon-badge"; badge.textContent = "COMING SOON";
+      el.appendChild(badge);
+      return { el, w: sprite.w, h: sprite.h + 8 };
     },
 
     open(api) {

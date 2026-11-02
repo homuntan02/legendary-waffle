@@ -10,7 +10,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; overflow: hidden; }
 /* stop double-tap-to-zoom on phones (rapid taps on the gifts) */
-html, body, button, a, canvas { touch-action: pan-x pan-y; }
+html, body, button, a, canvas { touch-action: manipulation; }
 body {
   background: var(--bg); color: var(--ink); font-family: var(--font);
   -webkit-font-smoothing: none; font-smooth: never; -webkit-tap-highlight-color: transparent;
@@ -199,6 +199,11 @@ button:focus-visible { outline: 4px dashed var(--pinkDark); outline-offset: 6px;
 .intro-art { position: relative; }
 .camera-intro { position: relative; animation: float 2.4s ease-in-out infinite; }
 .camera-glint { animation: twinkle 1s steps(2) infinite; }
+.soon-badge {
+  position: absolute; left: 50%; bottom: calc(var(--s) * -1px); translate: -50% 100%; rotate: -4deg; white-space: nowrap;
+  font-size: clamp(10px, 2.4vw, 15px); color: var(--ink); background: var(--yellow); padding: 9px 12px 7px;
+  box-shadow: 0 0 0 3px var(--outline), 0 6px 0 var(--outline); animation: blink 1.3s steps(1) infinite;
+}
 .picnic-art { position: relative; }
 
 /* ---------- RPG dialogue ---------- */
