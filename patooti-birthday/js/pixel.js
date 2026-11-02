@@ -170,28 +170,4 @@
     return s;
   };
 
-  BD.cursorSprite = function () {
-    return BD.grid(
-      [
-        "O..........",
-        "OO.........",
-        "OLO........",
-        "OLPO.......",
-        "OLPPO......",
-        "OLPPPO.....",
-        "OLPPPPO....",
-        "OLPPPPPO...",
-        "OLPPPPPPO..",
-        "OLPPPPPPPO.",
-        "OLPPPPOOOOO",
-        "OLPPOPO....",
-        "OLPO.OPO...",
-        "OLO..OPO...",
-        "OO....OPO..",
-        "O.....OPO..",
-        ".......OO.."
-      ],
-      { O: C.ink, L: C.white, P: C.pink }
-    );
-  };
 })();

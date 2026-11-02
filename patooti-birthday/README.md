@@ -31,7 +31,8 @@ Everything personal is in **`js/config.js`**:
 
 ## Code map
 
-- `js/pixel.js`: pixel sprite engine plus the small sprites (hearts, stars, cursor)
+- `js/pixel.js`: pixel sprite engine plus the small sprites (hearts, stars)
+- `js/cursor.js` + `img/cat-open.png` / `img/cat-closed.png`: the chomping pop-cat cursor (size and click point at the top of `cursor.js`)
 - `js/art.js`: duck plushie, bouquet, camera illustrations
 - `js/gift.js`: reusable gift box with its unwrap animations
 - `js/presents/*.js`: one file per present (camera photo booth, flowers, duck, book date). Each registers itself in `BD.presents`; optional hooks: `decorate`, `introArt`, `open`, `celebrate`.

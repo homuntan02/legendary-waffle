@@ -259,12 +259,16 @@ body[data-scene="scene-present"] .back-btn { display: flex; }
 #fx { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 50; pointer-events: none; image-rendering: pixelated; }
 #cursor { position: fixed; left: 0; top: 0; z-index: 9999; pointer-events: none; will-change: transform; }
 #cursor.hidden { opacity: 0; }
-.c-down { position: relative; transition: transform .08s steps(2); transform-origin: 0 0; }
-#cursor.down .c-down { transform: scale(.82) rotate(-10deg); }
-#cursor.hover .c-bob { animation: cbob .5s steps(2) infinite; }
-@keyframes cbob { 50% { transform: translate(2px, 3px) rotate(-6deg); } }
-.c-heart { position: absolute; left: 24px; top: 34px; opacity: 0; }
-#cursor.hover .c-heart { opacity: 1; animation: twinkle .7s steps(2) infinite; }
+/* pop-cat cursor: open mouth by default, closed while clicking */
+#cursor, #cursor * { pointer-events: none; }
+.cat-cursor { position: relative; transform-origin: 62% 60%; filter: drop-shadow(0 3px 0 rgba(140, 79, 107, .35)); }
+.cat-cursor img { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none; }
+.cat-cursor .cat-closed { position: absolute; inset: 0; visibility: hidden; }
+#cursor.chomp .cat-open { visibility: hidden; }
+#cursor.chomp .cat-closed { visibility: visible; }
+#cursor.chomp .cat-cursor { transform: scale(.94); }
+#cursor.hover:not(.chomp) .cat-cursor { animation: catTilt .6s ease-in-out infinite alternate; }
+@keyframes catTilt { from { rotate: -4deg; } to { rotate: 4deg; } }
 
 @media (max-width: 639px) {
   #hud { top: 14px; right: 14px; gap: 10px; }
