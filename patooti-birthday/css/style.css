@@ -10,7 +10,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; overflow: hidden; }
 /* stop double-tap-to-zoom on phones (rapid taps on the gifts) */
-html, body, button, a, canvas { touch-action: manipulation; }
+html, body, button, a, canvas { touch-action: pan-x pan-y; }
 body {
   background: var(--bg); color: var(--ink); font-family: var(--font);
   -webkit-font-smoothing: none; font-smooth: never; -webkit-tap-highlight-color: transparent;
